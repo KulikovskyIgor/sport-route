@@ -1,0 +1,26 @@
+<sebm-google-map
+    [latitude]="lat"
+    [longitude]="lng"
+    disableDefaultUI="disables"
+    zoom="12"
+    (mapClick)="clickOnMap($event)">
+    >
+
+    <sebm-google-map-marker
+        *ngFor="let entity of entities"
+        [latitude]="entity.geometry.location.lat"
+        [longitude]="entity.geometry.location.lng"
+        [tooltip]="entity.name"
+        [markerDraggable]="false"
+        [zoom]="zoom"
+        (markerClick)="clickOnMarker($event, entity.place_id)"
+        >
+
+        <sebm-google-map-info-window>
+            <strong>{{entity.name}}</strong>
+            <div>{{entity.vicinity}}</div>
+        </sebm-google-map-info-window>
+
+    </sebm-google-map-marker>
+
+</sebm-google-map>

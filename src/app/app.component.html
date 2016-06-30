@@ -1,0 +1,53 @@
+<header>
+  <div class="container">
+  	<nav [ngSwitch]="authState">
+  		<div class="logo-wrapper">
+  			<a class="logo" [routerLink]="['Home']">changeyourself</a>
+  		</div>
+    	<ul>
+	    	<li>
+	   			<a [routerLink]="['About']">About</a>
+	    	</li>
+	    	<li *ngSwitchWhen="false">
+	    		<a [routerLink]="['Login']">Login</a>
+	    	</li>
+	    	<li *ngSwitchWhen="false">
+	    		<a [routerLink]="['SignUp']">SignUp</a>
+	    	</li>
+	    	<li *ngSwitchWhen="true" class="user_login">
+				<span>
+		            <img src="{{user.img}}" alt="{{user.name}}">
+		        </span>
+	        	<span>{{user.name}}</span>
+	    	</li>
+	    	<li *ngSwitchWhen="true">
+	        	<a (click)="signOut()">Sign Out</a>
+	    	</li>
+	    </ul>
+	  </nav>
+  </div>
+</header>
+<main>
+  	<router-outlet></router-outlet>
+</main>
+<footer>
+  <div class="container">
+  	<nav>
+  		<div class="logo-wrapper">
+  			<a class="logo" [routerLink]="['Home']">changeyourself</a>
+  		</div>
+  		<ul>
+	    	<li>
+	   			<a href="#">Contact us</a>
+	    	</li>
+	    	<li>
+	   			<a href="#">Send email</a>
+	    	</li>
+	    	<li>
+	    		<a href="#">Lorem</a>
+	    	</li>
+	    </ul>
+  	</nav>
+  </div>
+  change yourself
+</footer>

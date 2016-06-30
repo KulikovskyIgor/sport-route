@@ -1,0 +1,27 @@
+.lginComponent{
+  padding: 4% 0;
+  .form{
+    margin-bottom: 25px;
+    .input-block + .input-block{
+      margin-top: 10px;
+    }
+    .text-center{
+      text-align: center;
+    }
+    .text-right{
+      text-align: right;
+    }
+  }
+  .social{
+    .social-items{
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      .social-item + .social-item{
+        margin-left: 10px;
+      }
+
+    }
+  }
+}
