@@ -2,7 +2,6 @@
     [latitude]="lat"
     [longitude]="lng"
     disableDefaultUI="disables"
-    zoom="12"
     (mapClick)="clickOnMap($event)">
     >
 
@@ -12,7 +11,6 @@
         [longitude]="entity.geometry.location.lng"
         [tooltip]="entity.name"
         [markerDraggable]="false"
-        [zoom]="zoom"
         (markerClick)="clickOnMarker($event, entity.place_id)"
         >
 

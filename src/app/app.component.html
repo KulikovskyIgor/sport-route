@@ -8,21 +8,6 @@
 	    	<li>
 	   			<a [routerLink]="['About']">About</a>
 	    	</li>
-	    	<li *ngSwitchWhen="false">
-	    		<a [routerLink]="['Login']">Login</a>
-	    	</li>
-	    	<li *ngSwitchWhen="false">
-	    		<a [routerLink]="['SignUp']">SignUp</a>
-	    	</li>
-	    	<li *ngSwitchWhen="true" class="user_login">
-				<span>
-		            <img src="{{user.img}}" alt="{{user.name}}">
-		        </span>
-	        	<span>{{user.name}}</span>
-	    	</li>
-	    	<li *ngSwitchWhen="true">
-	        	<a (click)="signOut()">Sign Out</a>
-	    	</li>
 	    </ul>
 	  </nav>
   </div>
