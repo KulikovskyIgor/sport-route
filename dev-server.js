@@ -3,6 +3,10 @@ var express = require('express');
 var app = express();
 var webpack = require('webpack');
 var config = require(`./webpack.config.js`);
+var httpProxy = require('http-proxy');
+var proxy = httpProxy.createProxyServer({
+    changeOrigin: true
+});
 
 var port = 3000;
 var host = "localhost";
@@ -30,6 +34,10 @@ app.use('/img', express.static('./src/public/img'));
 
 app.get('/', function(req, res){
     res.sendFile(path.join(__dirname, `./src/public/index.html`));
+});
+
+app.get('/maps/*', function(req, res){
+    proxy.web(req, res, { target: 'https://maps.googleapis.com' });
 });
 
 app.listen(port, host, (err) => {

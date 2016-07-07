@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   getCitites(model){
 	  console.log(model);
 	  if (model.length > 2){
-		  this.http.get('https://maps.googleapis.com/maps/api/geocode/json?&address=' + model).
+		  this.http.get('maps/api/geocode/json?&address=' + model).
 			  subscribe(response => {
 				  response.json();
 				  console.log(response.json());

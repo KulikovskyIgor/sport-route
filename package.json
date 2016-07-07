@@ -1,7 +1,8 @@
 {
   "name": "SportRoute",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "license": "MIT",
+  "description": "SportRoute",
   "scripts": {
     "clean": "rimraf node_modules doc dist && npm cache clean",
     "clean-install": "npm run clean && npm install",
@@ -33,6 +34,7 @@
     "angular2-google-maps": "0.12.0",
     "angular2-redux": "3.1.1",
     "es6-shim": "0.35.0",
+    "http-proxy": "^1.14.0",
     "ng2-bootstrap": "1.0.16",
     "ng2-firebase": "0.8.1",
     "redux": "3.5.2",
@@ -51,6 +53,7 @@
     "file-loader": "^0.8.4",
     "html-loader": "^0.4.0",
     "html-webpack-plugin": "^2.8.1",
+    "http-proxy": "^1.14.0",
     "istanbul-instrumenter-loader": "^0.2.0",
     "jasmine-core": "^2.3.4",
     "jasmine-spec-reporter": "^2.4.0",

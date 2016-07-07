@@ -19,7 +19,7 @@ export class MapService {
 
         return new Promise((resolve, reject) => {
             try{
-                this.http.get(`https://maps.googleapis.com/maps/api/place/search/json?location=${lat},${lon}&radius=${this.radius}&types=${this.type}&sensor=${this.sensor}&key=${this.appKey}`)
+                this.http.get(`maps/api/place/search/json?location=${lat},${lon}&radius=${this.radius}&types=${this.type}&sensor=${this.sensor}&key=${this.appKey}`)
                     .subscribe(responce => {
                         this.entities = responce.json().results;
                         resolve(this.entities);
@@ -35,7 +35,7 @@ export class MapService {
 
         return new Promise((resolve, reject) => {
             try{
-                this.http.get(`https://maps.googleapis.com/maps/api/place/details/json?placeid=${placeId}&sensor=false&key=${this.appKey}`)
+                this.http.get(`maps/api/place/details/json?placeid=${placeId}&sensor=false&key=${this.appKey}`)
                     .subscribe(responce => {
                         this.entity = responce.json().result;
                         resolve(this.entity);
@@ -50,7 +50,7 @@ export class MapService {
 
         return new Promise((resolve, reject) => {
             try{
-                this.http.get(`https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photoreference=${photoreference}&key=${this.appKey}`)
+                this.http.get(`maps/api/place/photo?maxwidth=400&photoreference=${photoreference}&key=${this.appKey}`)
                     .subscribe(responce => {
                         this.entity = responce.json().result;
                         resolve(this.entity);

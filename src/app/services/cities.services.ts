@@ -18,7 +18,7 @@ export class MapService {
 
         return new Promise((resolve, reject) => {
             try{
-                this.http.get(`https://maps.googleapis.com/maps/api/place/search/json?location=${lat},${lon}&radius=${this.radius}&types=${this.type}&sensor=${this.sensor}&key=${this.appKey}`)
+                this.http.get(`maps/api/place/search/json?location=${lat},${lon}&radius=${this.radius}&types=${this.type}&sensor=${this.sensor}&key=${this.appKey}`)
                     .subscribe(responce => {
                         this.entities = responce.json().results;
                         resolve(this.entities);
