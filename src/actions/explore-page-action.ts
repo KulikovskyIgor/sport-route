@@ -2,10 +2,9 @@ import { Injectable } from "@angular/core";
 import { Http } from '@angular/http';
 import { Actions, AppStore } from "angular2-redux";
 
-type Types = "SHOW_DETAILS_WINDOW" | "HIDE_DETAILS_WINDOW";
 export const ExplorePageTypes = {
-    SHOW_DETAILS_WINDOW: "SHOW_DETAILS_WINDOW" as Types,
-    HIDE_DETAILS_WINDOW: "HIDE_DETAILS_WINDOW" as Types
+    SHOW_DETAILS_WINDOW: "SHOW_DETAILS_WINDOW",
+    HIDE_DETAILS_WINDOW: "HIDE_DETAILS_WINDOW"
 };
 
 @Injectable()

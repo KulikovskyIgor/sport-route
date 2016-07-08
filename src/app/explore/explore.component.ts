@@ -8,7 +8,7 @@ import { Map } from './map';
 
 @Component({
     selector: 'explore',
-    viewProviders: [MapService],
+    viewProviders: [MapService, ExplorePageActions],
     directives: [EntityDetails, Map],
     template: require('./explore.component.html'),
     styles: [require('./explore.component.scss')]
