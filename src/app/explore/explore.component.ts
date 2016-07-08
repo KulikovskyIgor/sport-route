@@ -19,19 +19,19 @@ export class Explore implements OnInit, OnDestroy {
     lng:number = 0;
     place:string = null;
     entities:Object = [];
-    isShowEntityDetails: boolean = false;
+    isShowEntityDetails:boolean = false;
     private unsubscribeFromStore:()=>void;
 
-    constructor(public mapService:MapService, routeParams:RouteParams, appStore: AppStore, exploreActions: ExplorePageActions) {
+    constructor(public mapService:MapService, routeParams:RouteParams, appStore:AppStore, exploreActions:ExplorePageActions) {
         this.lat = +routeParams.get('lat');
         this.lng = +routeParams.get('lng');
         this.place = routeParams.get('place');
 
         this.unsubscribeFromStore = appStore.subscribe((state) => {
-            if(ExplorePageTypes.SHOW_DETAILS_WINDOW == state.explore.entityDetailsState){
+            if (ExplorePageTypes.SHOW_DETAILS_WINDOW == state.explore.entityDetailsState) {
                 this.isShowEntityDetails = true;
             }
-            if(ExplorePageTypes.HIDE_DETAILS_WINDOW == state.explore.entityDetailsState){
+            if (ExplorePageTypes.HIDE_DETAILS_WINDOW == state.explore.entityDetailsState) {
                 this.isShowEntityDetails = false;
             }
         });

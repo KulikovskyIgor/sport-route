@@ -1,26 +1,33 @@
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
 
-body{
+body {
     color: #4e595d;
-    font: normal 13px/140% "Helvetica Neue",Helvetica,Verdana,Arial,sans-serif;
+    font: normal 13px/140% "Helvetica Neue", Helvetica, Verdana, Arial, sans-serif;
     letter-spacing: 0;
     -webkit-font-smoothing: antialiased;
     background: #efeff4;
     min-height: 100%;
     height: 100%;
 }
-html{
+
+html {
     height: 100%;
     min-height: 100%;
 }
-ul{
+
+ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
 }
-my-app{
+
+my-app {
     display: flex !important;
     flex-direction: column;
     justify-content: space-between;
     min-height: 100%;
+}
+
+main {
+    position: relative;
 }

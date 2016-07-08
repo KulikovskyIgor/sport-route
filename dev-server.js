@@ -7,9 +7,9 @@ var httpProxy = require('http-proxy');
 var proxy = httpProxy.createProxyServer({
     changeOrigin: true
 });
-
-var port = 3000;
-var host = "localhost";
+var args = require('minimist')(process.argv);
+var port = args['p'] || 3000;
+var host = args['h'] || 'localhost';
 
 var compiler = webpack(config);
 

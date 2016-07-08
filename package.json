@@ -5,23 +5,9 @@
   "description": "SportRoute",
   "scripts": {
     "clean": "rimraf node_modules doc dist && npm cache clean",
-    "clean-install": "npm run clean && npm install",
-    "clean-start": "npm run clean-install && npm start",
-    "watch": "webpack --watch --progress --profile",
-    "build": "rimraf dist && webpack --progress --profile --bail",
-    "server": "webpack-dev-server --inline --progress --port 8080",
-    "webdriver-update": "webdriver-manager update",
-    "webdriver-start": "webdriver-manager start",
-    "lint": "tslint 'src/**/*.ts'; exit 0",
-    "e2e": "protractor",
-    "e2e-live": "protractor --elementExplorer",
-    "pretest": "npm run lint",
     "test": "karma start",
     "test-watch": "karma start --no-single-run --auto-watch",
-    "ci": "npm run e2e && npm run test",
-    "docs": "typedoc --options typedoc.json src/app/app.component.ts",
-    "start": "npm run server",
-    "postinstall": "npm run webdriver-update && typings install"
+    "start": "node ./dev-server.js"
   },
   "dependencies": {
     "@angular/common": "2.0.0-rc.2",
