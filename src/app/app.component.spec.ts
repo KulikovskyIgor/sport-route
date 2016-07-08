@@ -10,14 +10,12 @@ import { MockBackend } from '@angular/http/testing';
 import { provide } from '@angular/core';
 
 // Load the implementations that should be tested
-import { ApiService } from './shared';
 import { AppComponent } from './app.component';
 
 describe('App', () => {
   // provide our implementations or mocks to the dependency injector
   beforeEachProviders(() => [
     AppComponent,
-    ApiService,
     BaseRequestOptions,
     MockBackend,
     // Provide a mocked (fake) backend for Http
