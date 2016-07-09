@@ -38,6 +38,7 @@ export class Map implements OnInit, OnDestroy {
 
     private clickOnMarker(event, placeId) {
         this.appStore.dispatch(this.explorePageActions.SET_PLACE_ID(placeId));
+        this.appStore.dispatch(this.explorePageActions.FETCH_ENTITY_DETAILS(placeId));
         this.appStore.dispatch(this.explorePageActions.SHOW_DETAILS_WINDOW());
     }
 }

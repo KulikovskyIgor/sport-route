@@ -12,7 +12,7 @@
         [longitude]="entity.geometry.location.lng"
         [tooltip]="entity.name"
         [markerDraggable]="false"
-        (markerClick)="clickOnMarker($event, entity.place_id)"
+        (markerClick)="clickOnMarker($event, entity.placeId)"
         >
 
         <sebm-google-map-info-window>

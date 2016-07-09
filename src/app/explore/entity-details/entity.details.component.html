@@ -1,3 +1,6 @@
-<div class="entity-details" style="margin-top: 50px; height: 200px;">
-    {{entity | json}}
+<div class="images-container">
+    <img
+        *ngFor="let photo of photos"
+        [src]="photo"
+        />
 </div>

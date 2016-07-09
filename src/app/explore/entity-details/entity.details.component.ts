@@ -10,11 +10,13 @@ import { ExplorePageActions, ExplorePageTypes } from "./../../../actions/explore
 export class EntityDetails implements OnInit, OnDestroy {
     @Input() placeId             : string;
     private entity               : Object;
+    private photos               : Array<string>;
     private unsubscribeFromStore : () => void;
 
     constructor(private appStore:AppStore, private explorePageActions:ExplorePageActions) {
         this.unsubscribeFromStore = appStore.subscribe((state) => {
             this.entity = state.explore.entityDetails;
+            this.photos = state.explore.entityPhotos;
         });
     }
 

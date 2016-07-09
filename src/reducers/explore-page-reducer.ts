@@ -33,7 +33,13 @@ export default (state = defState, action:any = {}) => {
         case ExplorePageTypes.SET_ENTITY_PHOTOS:
             return Object.assign({}, state,
                 {
-                    entityPhotos: action.data
+                    entityPhotos: [...state.entityPhotos, action.data]
+                });
+        case ExplorePageTypes.CLEAN_ENTITY:
+            return Object.assign({}, state,
+                {
+                    entityDetails: {},
+                    entityPhotos: []
                 });
         case ExplorePageTypes.HIDE_DETAILS_WINDOW:
             return Object.assign({}, state,
