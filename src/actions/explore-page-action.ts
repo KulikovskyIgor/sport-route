@@ -91,7 +91,7 @@ export class ExplorePageActions extends Actions {
             this.http.get(`maps/api/place/photo?maxwidth=400&photoreference=${photoreference}&key=${app.googleAppKey}`)
                 .subscribe(responce => {
                     if (responce.statusText === `OK`) {
-                        dispatch(this.SET_ENTITY_PHOTOS(responce.url));
+                        dispatch(this.SET_ENTITY_PHOTOS({image: responce.url}));
                     } else {
                         //TODO notifier here
                     }

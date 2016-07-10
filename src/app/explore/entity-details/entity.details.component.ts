@@ -1,11 +1,13 @@
 import { Component, Input, OnInit, OnDestroy }  from '@angular/core';
 import { AppStore }                             from "angular2-redux";
 import { ExplorePageActions, ExplorePageTypes } from "./../../../actions/explore-page-action";
+import { Carousel } from './carousel/carousel.component';
 
 @Component({
     selector: 'entity-details',
     template: require('./entity.details.component.html'),
-    styles: [require('./entity.details.component.scss')]
+    styles: [require('./entity.details.component.scss')],
+    directives: [Carousel]
 })
 export class EntityDetails implements OnInit, OnDestroy {
     @Input() placeId             : string;

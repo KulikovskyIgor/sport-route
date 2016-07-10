@@ -1,0 +1,6 @@
+<carousel [interval]="NextPhotoInterval" [noWrap]="noLoopSlides">
+    <slide *ngFor="#slidez of photos; #index=index"
+           [active]="slidez.active">
+        <img [src]="slidez.image" style="margin:auto;">
+    </slide>
+</carousel>
