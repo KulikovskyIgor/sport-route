@@ -12,7 +12,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 export class EntityDetails implements OnDestroy {
     @Input() placeId             : string;
     private entity               : Object;
-    private photos               : Array<string>;
+    private photos               : Array<Object>;
     private unsubscribeFromStore : () => void;
 
     constructor(private appStore:AppStore, private explorePageActions:ExplorePageActions) {
