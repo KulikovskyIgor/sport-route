@@ -1,0 +1,27 @@
+<div class="row user" *ngFor="#user of reviews | userspipe">
+    <div class="col-xs-2 profile-img">
+        <div *ngIf="user.profilePhotoUrl">
+            <img src="{{'https:' + user.profilePhotoUrl}}"/>
+        </div>
+    </div>
+    <div class="col-xs-10 profile-content">
+        <div class="row">
+            <div class="col-xs-12 user-name">
+                <span>
+                    {{user.authorName}}
+                </span>
+                <span>
+                     •
+                </span>
+                <span>
+                    {{getFormatedDate(user.time)}}
+                </span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                {{user.text}}
+            </div>
+        </div>
+    </div>
+</div>

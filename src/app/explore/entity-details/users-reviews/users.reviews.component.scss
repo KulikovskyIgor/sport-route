@@ -1,0 +1,22 @@
+$color_1: #6A6A6A;
+$color_3: #337ab7;
+
+.user{
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 15px;
+    .profile-img{
+        img{
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+        }
+    }
+    .profile-content{
+        padding-left: 25px;
+        color: $color_1;
+        .user-name{
+            color: $color_3;
+        }
+    }
+}

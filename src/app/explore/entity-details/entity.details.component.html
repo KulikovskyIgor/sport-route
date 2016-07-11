@@ -1,2 +1,54 @@
-<carousel [photos]="photos"></carousel>
-
+<div class="entity-details-container" [class.open]="isOpen">
+    <div class="row">
+        <div class="col-xs-12">
+            <carousel [photos]="photos"></carousel>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 entity-name">
+            {{entity.name}}
+        </div>
+    </div>
+    <div class="row entity-info">
+        <div class="col-xs-2 entity-info-label">
+            Address:
+        </div>
+        <div class="col-xs-10">
+            {{entity.formattedAddress}}
+        </div>
+    </div>
+    <div class="row entity-info">
+        <div class="col-xs-2 entity-info-label">
+            Phone:
+        </div>
+        <div class="col-xs-10">
+            {{entity.internationalPhoneNumber}}
+        </div>
+    </div>
+    <div class="row entity-info" *ngIf="entity.website">
+        <div class="col-xs-2 entity-info-label">
+            Website:
+        </div>
+        <div class="col-xs-10">
+            <a [href]="entity.website">{{entity.website}}</a>
+        </div>
+    </div>
+    <div class="row entity-info work-schedule" *ngIf="entity.openingHours">
+        <div class="col-xs-4 entity-info-label">
+            Work schedule:
+        </div>
+        <div class="col-xs-8 entity-info-value">
+            <ul>
+                <li *ngFor="#day of entity.openingHours.weekdayText">
+                    {{day}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="row reviews-container">
+        <div class="col-xs-12">
+            <div class="separating-line"></div>
+            <users-reviews [reviews]="entity.reviews"></users-reviews>
+        </div>
+    </div>
+</div>

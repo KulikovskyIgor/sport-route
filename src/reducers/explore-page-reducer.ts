@@ -6,7 +6,12 @@ let defState = {
     searchType         : `gym`,
     searchRadius       : 3000,
     entities           : [],
-    entityDetails      : {},
+    entityDetails      : {
+        name: ``,
+        formattedAddress: ``,
+        internationalPhoneNumber: ``,
+        website: ``
+    },
     entityPhotos       : [],
     entityDetailsState : ExplorePageTypes.HIDE_DETAILS_WINDOW
 };
