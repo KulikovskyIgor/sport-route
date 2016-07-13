@@ -11,6 +11,6 @@ import { Carousel }                         from '../../../common/carousel/carou
 })
 export class CarouselComponent {
     @Input() photos           : Array<Object>;
-    private NextPhotoInterval : number = 3000;
+    private NextPhotoInterval : number = 3000000;
     private noLoopSlides      : boolean = false;
 }

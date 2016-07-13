@@ -1,4 +1,4 @@
-import { ExplorePageTypes } from '../actions/explore-page-action';
+import { ExplorePageTypes } from '../actions/explore-page-actions';
 
 let defState = {
     placeId            : 0,

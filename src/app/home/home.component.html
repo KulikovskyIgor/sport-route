@@ -22,16 +22,16 @@
 	</div>
 </div>
 <div class="main-search">
-	<form (ngSubmit)="getCityLocation()">
+	<form (ngSubmit)="goToExplorePage()">
 		<div>
-			<input type="text" 
-			   [(ngModel)]="city.formatted_address" 
-			   class="form-control input-lg" 
+			<input type="text"
+			   [(ngModel)]="q"
+			   class="form-control input-lg"
 			   placeholder="Type your current location"
-			   (ngModelChange)="getCitites(city.formatted_address)" required>
-			   <ul [hidden]="!citiesDropdown">
+			   (ngModelChange)="handleChangeQ(q)" required>
+			   <ul [hidden]="!isCitiesChooserOpened">
 			   	<li *ngFor="let cityItem of cities"
-			   	    (click)="handleClickCities(cityItem)">{{cityItem.formatted_address}}
+			   	    (click)="handleChooseCity(cityItem)">{{cityItem.formattedAddress}}
 			    </li>
 			   </ul>
 		</div>
@@ -39,10 +39,10 @@
 	</form>
 </div>
 <div class="main-video">
-	<video preload="auto" 
-		   autoplay="" 
-		   loop="" 
-		   class="fadeIn animated" 
+	<video preload="auto"
+		   autoplay=""
+		   loop=""
+		   class="fadeIn animated"
 		   poster="https://s3-us-west-2.amazonaws.com/coverr/poster/Coverr-yoga.jpg">
             <source src="https://s3-us-west-2.amazonaws.com/coverr/mp4/Coverr-yoga.mp4" type="video/mp4">Your browser does not support the video tag. I suggest you upgrade your browser.
             <source src="https://s3-us-west-2.amazonaws.com/coverr/mp4/Coverr-yoga.mp4" type="video/webm">Your browser does not support the video tag. I suggest you upgrade your browser.

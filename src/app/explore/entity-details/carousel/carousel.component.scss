@@ -1,5 +1,12 @@
+$carousel_height: 300px;
+
 :host {
     .carousel-item {
-        height: 300px;
+        height: $carousel_height;
+        .img {
+            height: $carousel_height;
+            width: 100%;
+            background-size: cover;
+        }
     }
 }

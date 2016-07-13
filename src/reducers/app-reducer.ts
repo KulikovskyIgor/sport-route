@@ -3,7 +3,6 @@ const defState = {
 };
 
 export default (state = defState, action:any = {}) => {
-    console.log('state', state);
     console.log(action.type, action);
     return state
 };

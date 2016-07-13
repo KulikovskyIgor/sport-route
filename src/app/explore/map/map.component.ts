@@ -1,7 +1,7 @@
 import { Component, Input, OnInit, OnDestroy } from '@angular/core';
 import { GOOGLE_MAPS_DIRECTIVES }              from 'angular2-google-maps/core';
 import { AppStore }                            from "angular2-redux";
-import { ExplorePageActions }                  from "./../../../actions/explore-page-action";
+import { ExplorePageActions }                  from "./../../../actions/explore-page-actions";
 import { CORE_DIRECTIVES, FORM_DIRECTIVES }    from '@angular/common';
 import { TOOLTIP_DIRECTIVES }                  from 'ng2-bootstrap';
 

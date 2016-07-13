@@ -1,7 +1,7 @@
 import { Component, OnDestroy }                 from '@angular/core';
 import { RouteParams, Router }                  from '@angular/router-deprecated';
 import { AppStore }                             from "angular2-redux";
-import { ExplorePageActions, ExplorePageTypes } from "./../../actions/explore-page-action";
+import { ExplorePageActions, ExplorePageTypes } from "./../../actions/explore-page-actions";
 import { EntityDetails }                        from './entity-details';
 import { Map }                                  from './map';
 
@@ -13,11 +13,12 @@ import { Map }                                  from './map';
     styles        : [require('./explore.component.scss')]
 })
 export class Explore implements OnDestroy {
-    private lat:number                  = 0;
-    private lng:number                  = 0;
-    private placeId:string              = null;
-    private isShowEntityDetails:boolean = false;
-    private unsubscribeFromStore:    () => void;
+    private lat:number                    = 0;
+    private lng:number                    = 0;
+    private placeId:string                = null;
+    private isShowEntityDetails:boolean   = false;
+    private isOpenedEntityDetails:boolean = false;
+    private unsubscribeFromStore:    ()   => void;
 
     constructor(private appStore:AppStore, private exploreActions:ExplorePageActions, routeParams:RouteParams) {
         this.lat     = +routeParams.get('lat');
@@ -26,11 +27,26 @@ export class Explore implements OnDestroy {
 
         this.unsubscribeFromStore = appStore.subscribe((state) => {
             this.placeId = state.explore.placeId;
-            this.isShowEntityDetails = ExplorePageTypes.SHOW_DETAILS_WINDOW == state.explore.entityDetailsState;
+
+            if(ExplorePageTypes.SHOW_DETAILS_WINDOW == state.explore.entityDetailsState){
+                if(!this.isShowEntityDetails) this._openEntityDetails();
+            }else{
+                if(this.isOpenedEntityDetails) this._hideEntityDetails();
+            }
         });
     }
 
     ngOnDestroy() {
         this.unsubscribeFromStore();
+    }
+
+    _openEntityDetails(){
+        this.isShowEntityDetails = true;
+        setTimeout(() => this.isOpenedEntityDetails = true, 0);
+    }
+
+    _hideEntityDetails(){
+        this.isOpenedEntityDetails = false;
+        setTimeout(() => this.isShowEntityDetails = false, 1000);
     }
 }

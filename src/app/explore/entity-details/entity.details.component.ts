@@ -1,6 +1,6 @@
 import { Component, Input, OnInit, OnDestroy }  from '@angular/core';
 import { AppStore }                             from "angular2-redux";
-import { ExplorePageActions, ExplorePageTypes } from "./../../../actions/explore-page-action";
+import { ExplorePageActions, ExplorePageTypes } from "./../../../actions/explore-page-actions";
 import { CarouselComponent } from './carousel/carousel.component';
 import { UsersReviewsComponent } from './users-reviews/users.reviews.component';
 
@@ -12,10 +12,10 @@ import { UsersReviewsComponent } from './users-reviews/users.reviews.component';
 })
 export class EntityDetails implements OnInit, OnDestroy {
     @Input() placeId             : string;
+    @Input() isOpened            : boolean = false;
     private entity               : Object;
     private photos               : Array<Object>;
     private unsubscribeFromStore : () => void;
-    private isOpen               : boolean = false;
 
     constructor(private appStore:AppStore, private explorePageActions:ExplorePageActions) {
         const { entityDetails, entityPhotos } = appStore.getState().explore;
@@ -27,12 +27,8 @@ export class EntityDetails implements OnInit, OnDestroy {
         });
     }
 
-    ngOnInit() {
-        setTimeout(() => this.isOpen = true, 0);
-    }
-
     ngOnDestroy() {
-        this.isOpen = false;
+        this.appStore.dispatch(this.explorePageActions.CLEAN_ENTITY());
         this.unsubscribeFromStore();
     }
 }
