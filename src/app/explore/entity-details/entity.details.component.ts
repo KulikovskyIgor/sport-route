@@ -1,6 +1,6 @@
-import { Component, Input, OnInit, OnDestroy }  from '@angular/core';
+import { Component, Input, OnDestroy }          from '@angular/core';
 import { AppStore }                             from "angular2-redux";
-import { ExplorePageActions, ExplorePageTypes } from "./../../../actions/explore-page-actions";
+import { ExplorePageActions } from "./../../../actions/explore-page-actions";
 import { CarouselComponent }                    from './carousel';
 import { UsersReviewsComponent }                from './users-reviews';
 
@@ -10,7 +10,7 @@ import { UsersReviewsComponent }                from './users-reviews';
     styles     : [require('./entity.details.component.scss')],
     directives : [CarouselComponent, UsersReviewsComponent]
 })
-export class EntityDetails implements OnInit, OnDestroy {
+export class EntityDetails implements OnDestroy {
     @Input() placeId             : string;
     @Input() isOpened            : boolean = false;
     private entity               : Object;

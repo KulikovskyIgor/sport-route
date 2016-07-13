@@ -1,16 +1,16 @@
-import { Injectable }        from "@angular/core";
+import { Injectable }        from '@angular/core';
 import { Http }              from '@angular/http';
-import { Actions, AppStore } from "angular2-redux";
+import { Actions, AppStore } from 'angular2-redux';
 const humps = require('humps');
 
 export const ExplorePageTypes = {
-    SHOW_DETAILS_WINDOW: "SHOW_DETAILS_WINDOW",
-    HIDE_DETAILS_WINDOW: "HIDE_DETAILS_WINDOW",
-    SET_PLACE_ID: "SET_PLACE_ID",
-    SET_ENTITIES: "SET_ENTITIES",
-    SET_ENTITY_DETAILS: "SET_ENTITY_DETAILS",
-    SET_ENTITY_PHOTOS: "SET_ENTITY_PHOTOS",
-    CLEAN_ENTITY: "CLEAN_ENTITY"
+    SHOW_DETAILS_WINDOW : 'SHOW_DETAILS_WINDOW',
+    HIDE_DETAILS_WINDOW : 'HIDE_DETAILS_WINDOW',
+    SET_PLACE_ID        : 'SET_PLACE_ID',
+    SET_ENTITIES        : 'SET_ENTITIES',
+    SET_ENTITY_DETAILS  : 'SET_ENTITY_DETAILS',
+    SET_ENTITY_PHOTOS   : 'SET_ENTITY_PHOTOS',
+    CLEAN_ENTITY        : 'CLEAN_ENTITY'
 };
 
 @Injectable()

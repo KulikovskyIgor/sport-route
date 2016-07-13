@@ -8,7 +8,7 @@ import { GOOGLE_MAPS_PROVIDERS }                  from 'angular2-google-maps/cor
 
 import { AppComponent }                           from './app/app.component';
 
-import { AppStore }                               from "angular2-redux";
+import { AppStore }                               from 'angular2-redux';
 import  AppStoreFactory                           from './store';
 
 if (process.env.ENV === 'build') {

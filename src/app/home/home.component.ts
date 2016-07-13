@@ -1,8 +1,7 @@
 import { Component, OnDestroy }              from '@angular/core';
-import { Http }                              from '@angular/http';
 import { Router }                            from '@angular/router-deprecated';
-import { AppStore }                          from "angular2-redux";
-import { HomePageActions, ExplorePageTypes } from "./../../actions/home-page-actions";
+import { AppStore }                          from 'angular2-redux';
+import { HomePageActions }                   from './../../actions/home-page-actions';
 
 @Component({
     selector      : 'my-home',
@@ -16,7 +15,7 @@ export class HomeComponent implements OnDestroy {
     private cities                : Array<Object>;
     private unsubscribeFromStore  : () => void;
     private qTimeout              = null;
-    private isCitiesChooserOpened : bool = false;
+    private isCitiesChooserOpened : boolean = false;
 
     constructor(private router:Router, private appStore:AppStore, private homeActions:HomePageActions) {
         this.unsubscribeFromStore = appStore.subscribe((state) => {

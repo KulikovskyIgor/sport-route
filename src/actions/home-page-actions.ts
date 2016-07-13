@@ -4,9 +4,9 @@ import { Actions, AppStore } from "angular2-redux";
 const humps = require('humps');
 
 export const HomePageTypes = {
-    SET_CITY: "SET_CITY",
-    SET_CITIES: "SET_CITIES",
-    CLEAN_HOME: "CLEAN_HOME"
+    SET_CITY   : "SET_CITY",
+    SET_CITIES : "SET_CITIES",
+    CLEAN_HOME : "CLEAN_HOME"
 };
 
 @Injectable()
@@ -25,8 +25,7 @@ export class HomePageActions extends Actions {
     }
 
     FETCH_CITIES(q) {
-        return (dispatch, getState) => {
-            const {app, explore} = getState();
+        return (dispatch) => {
             this.http.get(`maps/api/geocode/json?&address=${q}`)
                 .subscribe(responce => {
                     let body = responce.json();

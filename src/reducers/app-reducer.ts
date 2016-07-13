@@ -3,6 +3,5 @@ const defState = {
 };
 
 export default (state = defState, action:any = {}) => {
-    console.log(action.type, action);
-    return state
+    return state;
 };

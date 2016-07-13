@@ -1,7 +1,7 @@
 import { Component, OnDestroy }                 from '@angular/core';
-import { RouteParams, Router }                  from '@angular/router-deprecated';
-import { AppStore }                             from "angular2-redux";
-import { ExplorePageActions, ExplorePageTypes } from "./../../actions/explore-page-actions";
+import { RouteParams }                          from '@angular/router-deprecated';
+import { AppStore }                             from 'angular2-redux';
+import { ExplorePageActions, ExplorePageTypes } from './../../actions/explore-page-actions';
 import { EntityDetails }                        from './entity-details';
 import { Map }                                  from './map';
 
@@ -28,7 +28,7 @@ export class Explore implements OnDestroy {
         this.unsubscribeFromStore = appStore.subscribe((state) => {
             this.placeId = state.explore.placeId;
 
-            if(ExplorePageTypes.SHOW_DETAILS_WINDOW == state.explore.entityDetailsState){
+            if(ExplorePageTypes.SHOW_DETAILS_WINDOW === state.explore.entityDetailsState){
                 if(!this.isShowEntityDetails) this.openEntityDetails();
             }else{
                 if(this.isOpenedEntityDetails) this.hideEntityDetails();
