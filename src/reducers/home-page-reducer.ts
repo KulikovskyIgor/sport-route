@@ -1,8 +1,8 @@
 import { HomePageTypes } from '../actions/home-page-actions';
 
 const defState = {
-    city: {},
-    cities: []
+    city   : {},
+    cities : []
 };
 
 export default (state = defState, action:any = {}) => {

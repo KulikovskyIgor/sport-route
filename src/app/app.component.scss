@@ -1,22 +1,27 @@
-// styles applied on :host are applied on the current component, "app" in this case
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.css');
+
+$color_0: #fff;
+$color_1: #0732a2;
+$color_2: rgba(7, 50, 162, 0.5);
+$color_3: #FFEB3B;
+$color_4: #4CAF50;
 
 :host {
     display: block;
 }
 
 body {
-    color: black;
+    color: $color_1;
 }
 
 header {
-    background-color: #0732a2;
+    background-color: $color_1;
     padding: 16px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    box-shadow: 2px 2px 6px rgba(7, 50, 162, 0.5);
+    box-shadow: 2px 2px 6px $color_2;
     z-index: 99999;
 }
 
@@ -33,6 +38,7 @@ main {
 my-home {
     flex-grow: 1;
     position: relative;
+    background-color: $color_1;
 }
 
 .grow {
@@ -47,7 +53,7 @@ my-home {
 
     span {
         font-weight: bold;
-        color: #ffffff;
+        color: $color_0;
     }
 
     img {
@@ -72,7 +78,7 @@ footer {
             a {
                 font-weight: bold;
                 text-transform: uppercase;
-                color: #fff;
+                color: $color_0;
                 font-size: 16px;
             }
         }
@@ -89,14 +95,14 @@ footer {
                 }
 
                 a {
-                    color: #fff;
+                    color: $color_0;
                     font-size: 15px;
                     font-weight: bold;
                     border-radius: 0;
 
                     &:hover:not(.btn),
                     &.router-link-active {
-                        color: #FFEB3B;
+                        color: $color_3;
                     }
                 }
             }
@@ -118,7 +124,7 @@ nav {
         a {
             font-weight: bold;
             text-transform: uppercase;
-            color: #fff;
+            color: $color_0;
             font-size: 16px;
         }
     }
@@ -135,13 +141,13 @@ nav {
             }
 
             a {
-                color: #fff;
+                color: $color_0;
                 font-size: 13px;
                 font-weight: bold;
                 border-radius: 0;
 
                 &.signUp {
-                    background: #4CAF50;
+                    background: $color_4;
                 }
 
                 &.login {
@@ -150,60 +156,7 @@ nav {
 
                 &:hover,
                 &:focus {
-                    border-color: #4CAF50;
-                }
-            }
-        }
-    }
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    a {
-        transition: linear .2s all;
-        text-decoration: none;
-    }
-
-    .logo-wrapper {
-        a {
-            font-weight: bold;
-            text-transform: uppercase;
-            color: #fff;
-            font-size: 16px;
-        }
-    }
-
-    ul {
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-
-        li {
-
-            &:not(:last-child) {
-                margin-right: 10px;
-            }
-
-            a {
-                color: #fff;
-                font-size: 13px;
-                font-weight: bold;
-                border-radius: 0;
-
-                &.signUp {
-                    background: #4CAF50;
-                }
-
-                &.login {
-                    background: transparent;
-                }
-
-                &:hover,
-                &:focus {
-                    border-color: #4CAF50;
+                    border-color: $color_4;
                 }
             }
         }
@@ -214,60 +167,5 @@ footer {
     text-align: center;
     font-size: 0.8em;
     padding: 16px;
-    background-color: #0732a2;
-}
-
-html {
-    height: 100%;
-}
-
-html {
-    height: 100%;
-}
-
-html {
-    height: 100%;
-}
-
-.social-items {
-    li.social-item {
-        &:not(:last-child) {
-            margin-right: 15px;
-        }
-        span {
-            display: inline-block;
-            width: 50px;
-            height: 50px;
-            border-radius: 100%;
-            background-color: #FFF;
-            position: relative;
-            cursor: pointer;
-            transition: linear .2s all;
-
-            &:hover {
-                transform: rotate(360deg);
-            }
-
-            & > i {
-                color: #fff;
-                font-size: 18px;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-            }
-
-            &.google {
-                background: #F44336;
-            }
-
-            &.facebook {
-                background: #3F51B5;
-            }
-
-            &.twitter {
-                background: #2196F3;
-            }
-        }
-    }
+    background-color: $color_1;
 }

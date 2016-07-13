@@ -1,14 +1,14 @@
 import { Component, Input, OnInit, OnDestroy }  from '@angular/core';
 import { AppStore }                             from "angular2-redux";
 import { ExplorePageActions, ExplorePageTypes } from "./../../../actions/explore-page-actions";
-import { CarouselComponent } from './carousel/carousel.component';
-import { UsersReviewsComponent } from './users-reviews/users.reviews.component';
+import { CarouselComponent }                    from './carousel';
+import { UsersReviewsComponent }                from './users-reviews';
 
 @Component({
-    selector: 'entity-details',
-    template: require('./entity.details.component.html'),
-    styles: [require('./entity.details.component.scss')],
-    directives: [CarouselComponent, UsersReviewsComponent]
+    selector   : 'entity-details',
+    template   : require('./entity.details.component.html'),
+    styles     : [require('./entity.details.component.scss')],
+    directives : [CarouselComponent, UsersReviewsComponent]
 })
 export class EntityDetails implements OnInit, OnDestroy {
     @Input() placeId             : string;

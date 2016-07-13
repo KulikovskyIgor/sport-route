@@ -29,9 +29,9 @@ export class Explore implements OnDestroy {
             this.placeId = state.explore.placeId;
 
             if(ExplorePageTypes.SHOW_DETAILS_WINDOW == state.explore.entityDetailsState){
-                if(!this.isShowEntityDetails) this._openEntityDetails();
+                if(!this.isShowEntityDetails) this.openEntityDetails();
             }else{
-                if(this.isOpenedEntityDetails) this._hideEntityDetails();
+                if(this.isOpenedEntityDetails) this.hideEntityDetails();
             }
         });
     }
@@ -40,13 +40,13 @@ export class Explore implements OnDestroy {
         this.unsubscribeFromStore();
     }
 
-    _openEntityDetails(){
+    private openEntityDetails(){
         this.isShowEntityDetails = true;
         setTimeout(() => this.isOpenedEntityDetails = true, 0);
     }
 
-    _hideEntityDetails(){
+    private hideEntityDetails(){
         this.isOpenedEntityDetails = false;
-        setTimeout(() => this.isShowEntityDetails = false, 1000);
+        setTimeout(() => this.isShowEntityDetails = false, 500);
     }
 }

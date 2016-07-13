@@ -3,15 +3,6 @@ $color_2: #3171ac;
 $color_3: #337ab7;
 $color_4: #DADADA;
 
-@keyframes open-entity-details {
-    from {
-        left: -100%;
-    }
-    to {
-        left: 0%;
-    }
-}
-
 .entity-details-container {
     position: absolute;
     width: 450px;
@@ -22,9 +13,7 @@ $color_4: #DADADA;
     background: #fff;
     box-shadow: 0 0 15px rgba(0,0,0,0.5);
     left: -100%;
-    transition: left 1s;
-    //animation: open-entity-details 1s ease-out;
-    //animation-fill-mode: forwards;
+    transition: left .5s;
     &.open{
         left: 0%;
     }

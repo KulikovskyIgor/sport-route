@@ -2,12 +2,13 @@
     [latitude]="lat"
     [longitude]="lng"
     [zoom]="zoom"
-    [disableDefaultUI]="false"
+    disableDefaultUI="false"
     (mapClick)="clickOnMap($event)">
     >
 
     <sebm-google-map-marker
         *ngFor="let entity of entities"
+        iconUrl="img/map-marker.png"
         [latitude]="entity.geometry.location.lat"
         [longitude]="entity.geometry.location.lng"
         [tooltip]="entity.name"

@@ -19,7 +19,7 @@ export class UsersReviewsComponent {
         minute: 'numeric'
     };
 
-    getFormatedDate(time) {
+    private getFormatedDate(time) {
         const date = new Date(+`${time}000`);
         return date.toLocaleString("en-US", this.dateOptions);
     }

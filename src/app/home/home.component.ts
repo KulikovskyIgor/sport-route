@@ -1,22 +1,22 @@
-import { Component, OnDestroy } from '@angular/core';
-import { Http } from '@angular/http';
-import { Router } from '@angular/router-deprecated';
-import { AppStore }                             from "angular2-redux";
+import { Component, OnDestroy }              from '@angular/core';
+import { Http }                              from '@angular/http';
+import { Router }                            from '@angular/router-deprecated';
+import { AppStore }                          from "angular2-redux";
 import { HomePageActions, ExplorePageTypes } from "./../../actions/home-page-actions";
 
 @Component({
-    selector: 'my-home',
-    viewProviders: [HomePageActions],
-    template: require('./home.component.html'),
-    styles: [require('./home.component.scss')]
+    selector      : 'my-home',
+    viewProviders : [HomePageActions],
+    template      : require('./home.component.html'),
+    styles        : [require('./home.component.scss')]
 })
 export class HomeComponent implements OnDestroy {
-    private q:string;
-    private city:Object;
-    private cities:Array<Object>;
-    private unsubscribeFromStore:() => void;
-    private qTimeout = null;
-    private isCitiesChooserOpened: bool = false;
+    private q                     : string;
+    private city                  : Object;
+    private cities                : Array<Object>;
+    private unsubscribeFromStore  : () => void;
+    private qTimeout              = null;
+    private isCitiesChooserOpened : bool = false;
 
     constructor(private router:Router, private appStore:AppStore, private homeActions:HomePageActions) {
         this.unsubscribeFromStore = appStore.subscribe((state) => {

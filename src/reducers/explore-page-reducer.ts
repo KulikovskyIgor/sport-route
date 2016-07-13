@@ -7,10 +7,10 @@ let defState = {
     searchRadius       : 3000,
     entities           : [],
     entityDetails      : {
-        name: ``,
-        formattedAddress: ``,
-        internationalPhoneNumber: ``,
-        website: ``
+        name                     : ``,
+        formattedAddress         : ``,
+        internationalPhoneNumber : ``,
+        website                  : ``
     },
     entityPhotos       : [],
     entityDetailsState : ExplorePageTypes.HIDE_DETAILS_WINDOW
