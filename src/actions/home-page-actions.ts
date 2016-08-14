@@ -33,9 +33,9 @@ export class HomePageActions extends Actions {
                     if (body.status === `OK`) {
                         dispatch(this.SET_CITIES(body.results));
                     } else {
-                        //TODO notifier here
+                        console.error('FETCH_CITIES', body.results);
                     }
-                });
+                }, error => console.error('FETCH_ENTITIES', error));
         }
     }
 }

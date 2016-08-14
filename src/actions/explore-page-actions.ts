@@ -59,9 +59,9 @@ export class ExplorePageActions extends Actions {
                     if (body.status === `OK`) {
                         dispatch(this.SET_ENTITIES(body.results));
                     } else {
-                        //TODO notifier here
+                        console.error('FETCH_ENTITIES', body.results);
                     }
-                });
+                }, error => console.error('FETCH_ENTITIES', error));
         }
     }
 
@@ -79,9 +79,9 @@ export class ExplorePageActions extends Actions {
                             dispatch(this.FETCH_ENTITY_PHOTOS(item.photoReference));
                         });
                     } else {
-                        //TODO notifier here
+                        console.error('FETCH_ENTITY_DETAILS', body.result);
                     }
-                });
+                }, error => console.error('FETCH_ENTITIES', error));
         }
     }
 
@@ -93,9 +93,9 @@ export class ExplorePageActions extends Actions {
                     if (responce.statusText === `OK`) {
                         dispatch(this.SET_ENTITY_PHOTOS({image: responce.url}));
                     } else {
-                        //TODO notifier here
+                        console.error('FETCH_ENTITY_PHOTOS', responce.statusText);
                     }
-                });
+                }, error => console.error('FETCH_ENTITIES', error));
         }
     }
 }
