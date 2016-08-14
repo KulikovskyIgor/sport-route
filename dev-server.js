@@ -4,6 +4,7 @@ var app = express();
 var webpack = require('webpack');
 var config = require(`./webpack.config.js`);
 var httpProxy = require('http-proxy');
+var open = require('open');
 var proxy = httpProxy.createProxyServer({
     changeOrigin: true
 });
@@ -45,5 +46,6 @@ app.listen(port, host, (err) => {
         console.log(err);
         return;
     }
+    open('http://' + host + ':' + port);
     console.log('Listening at http://' + host + ':' + port);
 });
